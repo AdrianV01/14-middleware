@@ -17,7 +17,7 @@
     return template(article);
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // DONE: Here we have our handlebar compiling functionality. It rips the article and the category out and maps them out into new arrays to be compiled by handlebars into index.html
   articleView.populateFilters = function() {
     var options;
     var template = Handlebars.compile($('#option-template').text());
@@ -36,7 +36,7 @@
     });
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // DONE: During a change or click that is enacted upon the filters this will handle the event and regurgitate a new page based upon your selections.
   articleView.handleFilters = function() {
     $('#filters').one('change', 'select', function() {
       var resource = this.id.replace('-filter', '');
@@ -85,7 +85,7 @@
      });
    }; */
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // DONE: By means of this function we can hide that which we do not want (in this case the about page), then hide everything and show only that which our filters enable us to see.
   articleView.index = function(articles) {
     $('#articles').show().siblings().hide();
 

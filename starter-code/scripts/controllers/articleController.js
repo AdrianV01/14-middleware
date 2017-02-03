@@ -13,7 +13,7 @@
     }
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // DONE: This method feasts upon articles wholesale, exiling them into a prison from which they may be retrieved at will by means of their identification.
   articleController.loadById = function(ctx, next) {
     var articleData = function(article) {
       ctx.articles = article;
@@ -22,7 +22,7 @@
     Article.findWhere('id', ctx.params.id, articleData);
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // DONE: By means of this method you can load up by author.
   articleController.loadByAuthor = function(ctx, next) {
     var authorData = function(articlesByAuthor) {
       ctx.articles = articlesByAuthor;
@@ -34,7 +34,7 @@
     );
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // DONE: And this one allows you to load by category.
   articleController.loadByCategory = function(ctx, next) {
     var categoryData = function(articlesInCategory) {
       ctx.articles = articlesInCategory;
@@ -44,7 +44,7 @@
     Article.findWhere('category', ctx.params.categoryName, categoryData);
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // DONE: The array receives all of your articles, then it is determined whether or not an article exists or not for further processing(in this case adding an article or simply loading all of your articles, no matter how dull or uninspired)
   articleController.loadAll = function(ctx, next) {
     var articleData = function(allArticles) {
       ctx.articles = Article.allArticles;
@@ -60,4 +60,5 @@
   };
 
   module.articleController = articleController;
+
 })(window);
